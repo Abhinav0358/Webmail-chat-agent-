@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Roundcube Agent AI",
+  "version": "1.0",
+  "description": "Local agent that searches your Roundcube webmail using LangGraph and Gemini.",
+  "permissions": [
+    "sidePanel",
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "background": {
+    "service_worker": "background.bundle.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content.bundle.js"]
+    }
+  ],
+  "action": {
+    "default_title": "Open Roundcube Agent"
+  }
+}

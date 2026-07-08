@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roundcube Agent</title>
+    <link href="sidepanel.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-title">
+                <span class="icon">🤖</span>
+                <h1>Roundcube Agent</h1>
+            </div>
+            <p class="subtitle">Your AI webmail assistant</p>
+        </header>
+        
+        <div class="settings-container">
+            <input type="password" id="apiKey" placeholder="Enter Gemini API Key..." />
+            <button id="saveKeyBtn">Save</button>
+        </div>
+
+        <div id="chatHistory" class="chat-history">
+            <div class="message system">
+                <div class="message-content">Hello! Ask me anything about your Roundcube inbox.</div>
+            </div>
+        </div>
+        
+        <div class="loading-indicator" id="loadingIndicator" style="display: none;">
+            <div class="spinner"></div>
+            <span id="loadingText">Scraping emails...</span>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="userInput" placeholder="E.g., What did John send today?" />
+            <button id="sendBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <script src="agent.bundle.js"></script>
+</body>
+</html>
