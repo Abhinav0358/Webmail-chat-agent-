@@ -2,6 +2,17 @@
 
 Roundcube Agent AI is a serverless, locally executing browser extension that brings autonomous data-extraction capabilities to your IITB webmail client. Operating securely within a Chrome side panel, it interfaces directly with your inbox DOM to process emails and synthesize answers via large language models. The agent automates pagination, parses complex email structures, and handles natural language queries without relying on an external backend.
 
+## Important Notes
+
+- **Do not open any mail windows**  
+  Opening mail windows can interfere with DOM scraping in this basic version.
+
+- **Performance considerations**  
+  The system may run slowly since it juggles multiple free models and retries with other models if one returns a `429` (rate limit).
+
+- **Planned improvements**  
+  This is an early/basic version. Optimizations and fixes will be added in future updates.
+ 
 ## Product Overview
 
 ![Screenshot 1 Placeholder: Main Chat Interface](assets/ss1.png)
